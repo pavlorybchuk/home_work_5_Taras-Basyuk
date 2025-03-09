@@ -112,6 +112,8 @@ def del_order():
 
 def make_order():
     global o_value
+    if not order:
+        return
     try:
         with open("./DataBase/customer_order.json", "w", encoding="utf-8") as f:
             now = f"{datetime.now().strftime('%d.%m.%Y %H:%M')}"
