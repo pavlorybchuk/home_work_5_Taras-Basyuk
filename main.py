@@ -116,7 +116,7 @@ def make_order():
         return
     try:
         with open("./DataBase/customer_order.json", "w", encoding="utf-8") as f:
-            now = f"{datetime.now().strftime('%d.%m.%Y %H:%M')}"
+            now = f"{datetime.now().strftime('%d.%m.%Y %H:%M:%S')}"
             js_data = {now: {"total_price": o_value, "orders": []}}
             for i in range(len(order)):
                 js_data[now]["orders"].append([order[i][0].cget("text"), order[i][2].cget("text"),
